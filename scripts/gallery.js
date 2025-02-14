@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.next-arrow');
     
     let currentIndex = 0;
-    const slideWidth = 100; // 100%
-
+    const slideWidth = 100; // Changed to 100% to match new CSS
+    
     // Clone first and last slides for infinite effect
     const firstClone = slides[0].cloneNode(true);
     const lastClone = slides[slides.length - 1].cloneNode(true);
@@ -44,28 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Auto slide every 5 seconds
-    let autoSlideInterval = setInterval(() => moveToSlide(1), 5000);
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            moveToSlide(-1);
+        }
+        if (e.key === 'ArrowRight') {
+            moveToSlide(1);
+        }
+    });
 
     // Event listeners
     prevButton.addEventListener('click', () => {
-        clearInterval(autoSlideInterval);
         moveToSlide(-1);
-        autoSlideInterval = setInterval(() => moveToSlide(1), 5000);
     });
 
     nextButton.addEventListener('click', () => {
-        clearInterval(autoSlideInterval);
         moveToSlide(1);
-        autoSlideInterval = setInterval(() => moveToSlide(1), 5000);
-    });
-
-    // Pause auto-slide on hover
-    track.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-
-    track.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(() => moveToSlide(1), 5000);
     });
 });
