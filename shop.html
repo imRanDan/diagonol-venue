@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue Shop</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/shop-styles.css" />
+  </head>
+  <body class="shop-page">
+    <!-- Navigation (same as index.html) -->
+    <nav class="main-nav">
+      <div class="logo">VENUE NAME</div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#whats-on">What's On</a>
+        <a href="#news">News</a>
+        <a href="#info">Info</a>
+        <a href="#hire">Hire</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </nav>
+
+    <!-- Shop Filters -->
+    <div class="shop-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">T-Shirts</button>
+      <button class="filter-btn">Hoodies</button>
+      <button class="filter-btn">Jackets</button>
+      <button class="filter-btn">Accessories</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Product Card -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="/assets/images/product1.jpg" alt="Venue T-Shirt" />
+          <div class="quick-add">Quick Add</div>
+        </div>
+        <div class="product-info">
+          <h3>Venue Roller T-Shirt</h3>
+          <p class="price">$35.00 CAD</p>
+        </div>
+      </div>
+
+      <!-- More Product Cards (repeat structure) -->
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart">&times;</button>
+      </div>
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-amount">£0.00 GBP</span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <script src="./scripts/shop.js"></script>
+  </body>
+</html>
