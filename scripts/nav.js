@@ -7,6 +7,7 @@ const navTemplate = `
         <a href="shop.html">SHOP</a>
         <a href="whats-on.html">WHAT'S ON</a>
         <a href="news.html">NEWS</a>
+        <a href="hire.html">HIRE</a>
     </div>
     <div class="hamburger">
         <span></span>

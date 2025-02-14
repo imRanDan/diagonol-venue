@@ -2,7 +2,7 @@
 .whats-on-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 120px 2rem 2rem 2rem; /* Increased top padding to account for navbar */
 }
 
 .filter-section {
