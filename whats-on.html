@@ -10,41 +10,25 @@
 <body>
 
 
-    <main class="whats-on-container">
+    <div class="whats-on-container">
         <h1>WHAT'S ON</h1>
         
-        <!-- Filters Section -->
-        <div class="filter-section">
-            <button class="filter-toggle">Filters</button>
-            <div class="filter-options">
-                <div class="date-filter">
-                    <h3>Select date range</h3>
-                    <input type="date" id="date-from">
-                    <input type="date" id="date-to">
+        <div class="events-sections" id="events-container">
+            <div class="available-events">
+                <h2>Available Events</h2>
+                <div class="events-grid" id="available-events-grid">
+                    <!-- Available events will be inserted here -->
                 </div>
-                
-                <div class="availability-filter">
-                    <label>
-                        <input type="checkbox" id="hide-sold-out">
-                        Hide Sold Out Events
-                    </label>
+            </div>
+            
+            <div class="sold-out-events">
+                <h2>Sold Out</h2>
+                <div class="events-grid" id="sold-out-events-grid">
+                    <!-- Sold out events will be inserted here -->
                 </div>
-                
-                <button class="clear-filters">Clear All</button>
             </div>
         </div>
-
-        <!-- Events Grid -->
-        <div class="events-grid" id="events-container">
-            <!-- Events will be dynamically inserted here -->
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <button class="prev-page">Previous Page</button>
-            <button class="next-page">Next Page</button>
-        </div>
-    </main>
+    </div>
 </body>
 <script src="./scripts/events.js"></script>
 <script src="./scripts/nav.js"></script>

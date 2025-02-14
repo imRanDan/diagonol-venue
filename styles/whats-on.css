@@ -2,76 +2,106 @@
 .whats-on-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 2rem 2rem 2rem; /* Increased top padding to account for navbar */
+    padding: 120px 2rem 2rem 2rem;
 }
 
-.filter-section {
-    margin: 2rem 0;
-    padding: 1rem;
-    background: black;
+/* Events Sections */
+.events-sections {
+    margin-top: 3rem;
 }
 
-.filter-options {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
+.available-events,
+.sold-out-events {
+    margin-bottom: 4rem;
+}
+
+.available-events h2,
+.sold-out-events h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
 }
 
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+}
+
+.sold-out-events .event-card {
+    opacity: 0.7;
 }
 
 .event-card {
-    border: 1px solid #ddd;
-    overflow: hidden;
-    transition: transform 0.2s;
+    background: #111;
+    transition: transform 0.3s ease;
 }
 
 .event-card:hover {
     transform: translateY(-5px);
 }
 
+.event-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
 .event-image img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
 }
 
 .event-info {
-    padding: 1rem;
+    padding: 1.5rem;
+}
+
+.event-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.event-date,
+.event-time {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-status {
+    margin-top: 1rem;
 }
 
 .ticket-button {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 10px 25px;
     background: #000;
     color: white;
     text-decoration: none;
-    margin-top: 1rem;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.ticket-button:hover {
+    background: #fff;
+    color: #000;
 }
 
 .sold-out-badge {
-    background: #ff4444;
-    color: white;
-    padding: 0.5rem;
     display: inline-block;
-    margin-top: 1rem;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.no-events {
-    text-align: center;
-    grid-column: 1 / -1;
-    padding: 3rem;
+    padding: 10px 25px;
+    background: transparent;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 /* Responsive Design */

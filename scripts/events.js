@@ -1,37 +1,100 @@
 const events = [
     {
-        title: "deadmau5 funhau5",
-        date: "2024-03-15",
-        time: "18:00 - 03:00",
-        status: "On Sale", // or "Sold Out"
-        image: "/assets/images/events/event1.jpg",
-        ticketLink: "#"
-    },
-    {
-        title: "Summer Underground",
-        date: "2024-06-15",
+        title: "DIAGONAL Opening Night: Aphex Twin",
+        date: "2024-11-15",
         time: "22:00 - 06:00",
-        status: "On Sale", // or "Sold Out"
+        status: "Sold Out",
         image: "/assets/images/events/event1.jpg",
         ticketLink: "#"
     },
     {
-        title: "Winter Wonderland",
-        date: "2024-12-15",
-        time: "20:00 - 04:00",
-        status: "On Sale", // or "Sold Out"
-        image: "/assets/images/events/event1.jpg",
-        ticketLink: "#"
-    },
-    {
-        title: "New Years Bonanza ",
-        date: "2024-01-01",
+        title: "Four Tet + Floating Points",
+        date: "2024-11-22",
         time: "22:00 - 06:00",
-        status: "On Sale", // or "Sold Out"
-        image: "/assets/images/events/event1.jpg",
+        status: "Sold Out",
+        image: "/assets/images/events/event2.jpg",
         ticketLink: "#"
     },
-    // Add more events as needed
+    {
+        title: "Bonobo: Fragments Live",
+        date: "2024-12-06",
+        time: "20:00 - 02:00",
+        status: "On Sale",
+        image: "/assets/images/events/event3.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Jamie xx All Night Long",
+        date: "2024-12-13",
+        time: "22:00 - 06:00",
+        status: "On Sale",
+        image: "/assets/images/events/event4.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "New Year's Eve: Chemical Brothers",
+        date: "2024-12-31",
+        time: "21:00 - 07:00",
+        status: "Sold Out",
+        image: "/assets/images/events/event5.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "New Year's Day: Bicep Live",
+        date: "2025-01-01",
+        time: "16:00 - 02:00",
+        status: "On Sale",
+        image: "/assets/images/events/event6.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Jon Hopkins: Polarity",
+        date: "2025-01-15",
+        time: "19:00 - 23:00",
+        status: "On Sale",
+        image: "/assets/images/events/event7.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Moderat Live",
+        date: "2025-01-22",
+        time: "20:00 - 02:00",
+        status: "Sold Out",
+        image: "/assets/images/events/event8.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Tale Of Us: Afterlife",
+        date: "2025-01-29",
+        time: "22:00 - 06:00",
+        status: "On Sale",
+        image: "/assets/images/events/event9.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Burial DJ Set",
+        date: "2025-02-08",
+        time: "22:00 - 05:00",
+        status: "On Sale",
+        image: "/assets/images/events/event10.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Max Cooper: 4D Experience",
+        date: "2025-02-15",
+        time: "20:00 - 02:00",
+        status: "On Sale",
+        image: "/assets/images/events/event11.jpg",
+        ticketLink: "#"
+    },
+    {
+        title: "Röyksopp Live",
+        date: "2025-02-22",
+        time: "20:00 - 02:00",
+        status: "On Sale",
+        image: "/assets/images/events/event12.jpg",
+        ticketLink: "#"
+    }
 ];
 
 function formatDate(dateStr) {
@@ -43,23 +106,16 @@ function formatDate(dateStr) {
     });
 }
 
-function displayEvents(filteredEvents = events) {
-    const container = document.getElementById('events-container');
-    container.innerHTML = '';
+function displayEvents() {
+    const availableContainer = document.getElementById('available-events-grid');
+    const soldOutContainer = document.getElementById('sold-out-events-grid');
+    
+    availableContainer.innerHTML = '';
+    soldOutContainer.innerHTML = '';
 
-    if (filteredEvents.length === 0) {
-        container.innerHTML = `
-            <div class="no-events">
-                <h2>There are currently no events available for your filters</h2>
-                <p>Maybe change your filters and you might find something that you think is really cool.</p>
-            </div>
-        `;
-        return;
-    }
-
-    filteredEvents.forEach(event => {
+    events.forEach(event => {
         const eventCard = `
-            <div class="event-card ${event.status === 'Sold Out' ? 'sold-out' : ''}">
+            <div class="event-card">
                 <div class="event-image">
                     <img src="${event.image}" alt="${event.title}">
                 </div>
@@ -76,49 +132,14 @@ function displayEvents(filteredEvents = events) {
                 </div>
             </div>
         `;
-        container.innerHTML += eventCard;
-    });
-}
-
-function setupFilters() {
-    const dateFrom = document.getElementById('date-from');
-    const dateTo = document.getElementById('date-to');
-    const hideSoldOut = document.getElementById('hide-sold-out');
-    const clearFilters = document.querySelector('.clear-filters');
-
-    function applyFilters() {
-        let filtered = [...events];
-
-        // Date filter
-        if (dateFrom.value) {
-            filtered = filtered.filter(event => event.date >= dateFrom.value);
+        
+        if (event.status === 'Sold Out') {
+            soldOutContainer.innerHTML += eventCard;
+        } else {
+            availableContainer.innerHTML += eventCard;
         }
-        if (dateTo.value) {
-            filtered = filtered.filter(event => event.date <= dateTo.value);
-        }
-
-        // Availability filter
-        if (hideSoldOut.checked) {
-            filtered = filtered.filter(event => event.status !== 'Sold Out');
-        }
-
-        displayEvents(filtered);
-    }
-
-    dateFrom.addEventListener('change', applyFilters);
-    dateTo.addEventListener('change', applyFilters);
-    hideSoldOut.addEventListener('change', applyFilters);
-
-    clearFilters.addEventListener('click', () => {
-        dateFrom.value = '';
-        dateTo.value = '';
-        hideSoldOut.checked = false;
-        displayEvents();
     });
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    displayEvents();
-    setupFilters();
-});
+document.addEventListener('DOMContentLoaded', displayEvents);

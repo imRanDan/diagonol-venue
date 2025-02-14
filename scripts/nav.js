@@ -1,7 +1,7 @@
 // Navigation template
 const navTemplate = `
 <nav class="main-nav">
-    <div class="logo">DIAGONOL</div>
+    <a href="index.html" class="logo">DIAGONAL</a>
     <div class="nav-links">
         <a href="index.html">HOME</a>
         <a href="shop.html">SHOP</a>
