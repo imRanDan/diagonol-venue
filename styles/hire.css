@@ -201,4 +201,31 @@ button:hover {
     section {
         padding: 2rem 1rem;
     }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.image-credits {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.image-credits p {
+    margin: 5px 0;
+}
+
+/* Image Credits */
+.image-credits {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.image-credits p {
+    margin: 5px 0;
 } 
