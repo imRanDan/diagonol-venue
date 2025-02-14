@@ -4,7 +4,7 @@ const events = [
         date: "2024-11-15",
         time: "22:00 - 06:00",
         status: "Sold Out",
-        image: "/assets/images/events/event1.jpg",
+        image: "/assets/images/whatson1.jpg",
         ticketLink: "#"
     },
     {
@@ -12,7 +12,7 @@ const events = [
         date: "2024-11-22",
         time: "22:00 - 06:00",
         status: "Sold Out",
-        image: "/assets/images/events/event2.jpg",
+        image: "/assets/images/whatson2.jpg",
         ticketLink: "#"
     },
     {
@@ -20,7 +20,7 @@ const events = [
         date: "2024-12-06",
         time: "20:00 - 02:00",
         status: "On Sale",
-        image: "/assets/images/events/event3.jpg",
+        image: "/assets/images/whatson3.png",
         ticketLink: "#"
     },
     {
@@ -28,7 +28,7 @@ const events = [
         date: "2024-12-13",
         time: "22:00 - 06:00",
         status: "On Sale",
-        image: "/assets/images/events/event4.jpg",
+        image: "/assets/images/whatson4.jpg",
         ticketLink: "#"
     },
     {
@@ -36,15 +36,15 @@ const events = [
         date: "2024-12-31",
         time: "21:00 - 07:00",
         status: "Sold Out",
-        image: "/assets/images/events/event5.jpg",
+        image: "/assets/images/whatson5.jpg",
         ticketLink: "#"
     },
     {
-        title: "New Year's Day: Bicep Live",
+        title: "New Year's Day: CDW Live",
         date: "2025-01-01",
         time: "16:00 - 02:00",
         status: "On Sale",
-        image: "/assets/images/events/event6.jpg",
+        image: "/assets/images/whatson6.jpg",
         ticketLink: "#"
     },
     {
@@ -52,7 +52,7 @@ const events = [
         date: "2025-01-15",
         time: "19:00 - 23:00",
         status: "On Sale",
-        image: "/assets/images/events/event7.jpg",
+        image: "/assets/images/whatson7.jpg",
         ticketLink: "#"
     },
     {
@@ -60,7 +60,7 @@ const events = [
         date: "2025-01-22",
         time: "20:00 - 02:00",
         status: "Sold Out",
-        image: "/assets/images/events/event8.jpg",
+        image: "/assets/images/whatson8.jpg",
         ticketLink: "#"
     },
     {
@@ -68,7 +68,7 @@ const events = [
         date: "2025-01-29",
         time: "22:00 - 06:00",
         status: "On Sale",
-        image: "/assets/images/events/event9.jpg",
+        image: "/assets/images/whatson9.jpg",
         ticketLink: "#"
     },
     {
@@ -76,7 +76,7 @@ const events = [
         date: "2025-02-08",
         time: "22:00 - 05:00",
         status: "On Sale",
-        image: "/assets/images/events/event10.jpg",
+        image: "/assets/images/whatson10.jpg",
         ticketLink: "#"
     },
     {
@@ -84,7 +84,7 @@ const events = [
         date: "2025-02-15",
         time: "20:00 - 02:00",
         status: "On Sale",
-        image: "/assets/images/events/event11.jpg",
+        image: "/assets/images/whatson11.jpg",
         ticketLink: "#"
     },
     {
@@ -92,7 +92,7 @@ const events = [
         date: "2025-02-22",
         time: "20:00 - 02:00",
         status: "On Sale",
-        image: "/assets/images/events/event12.jpg",
+        image: "/assets/images/whatson12.jpg",
         ticketLink: "#"
     }
 ];
