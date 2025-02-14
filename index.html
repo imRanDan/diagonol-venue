@@ -11,8 +11,8 @@
     />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
+
+    <!-- <nav class="main-nav">
       <div class="logo">DIAGONOL</div>
       <div class="hamburger">
         <span></span>
@@ -21,13 +21,13 @@
       </div>
       <div class="nav-links">
         <a href="/shop.html">Shop</a>
-        <a href="#whats-on">What's On</a>
-        <a href="#news">News</a>
+        <a href="/whats-on.html">What's On</a>
+        <a href="/news.html">News</a>
         <a href="#info">Info</a>
         <a href="#hire">Hire</a>
         <a href="#gallery">Gallery</a>
       </div>
-    </nav>
+    </nav> -->
 
 
     <!-- Hero Section -->
@@ -36,6 +36,30 @@
         <source src="your-video.mp4" type="video/mp4" />
       </video>
     </header>
+
+    <!-- Photo Gallery Slider -->
+    <section class="gallery-slider">
+      <button class="slider-arrow prev-arrow">
+          <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="slider-container">
+          <div class="slider-track">
+              <div class="slide">
+                  <img src="/assets/images/gallery/venue1.jpg" alt="Venue Image 1">
+              </div>
+              <div class="slide">
+                  <img src="/assets/images/gallery/venue2.jpg" alt="Venue Image 2">
+              </div>
+              <div class="slide">
+                  <img src="/assets/images/gallery/venue3.jpg" alt="Venue Image 3">
+              </div>
+              <!-- Add more slides as needed -->
+          </div>
+      </div>
+      <button class="slider-arrow next-arrow">
+          <i class="fas fa-chevron-right"></i>
+      </button>
+  </section>
 
     <!-- Latest News Section -->
     <section class="news-section">
@@ -96,5 +120,7 @@
 
     <script src="./scripts/script.js"></script>
     <script src="./scripts/shop.js"></script>
+    <script src="./scripts/nav.js"></script>
+    <script src="./scripts/gallery.js"></script>
   </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's On - DIAGONOL</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/whats-on.css">
+</head>
+<body>
+
+
+    <main class="whats-on-container">
+        <h1>WHAT'S ON</h1>
+        
+        <!-- Filters Section -->
+        <div class="filter-section">
+            <button class="filter-toggle">Filters</button>
+            <div class="filter-options">
+                <div class="date-filter">
+                    <h3>Select date range</h3>
+                    <input type="date" id="date-from">
+                    <input type="date" id="date-to">
+                </div>
+                
+                <div class="availability-filter">
+                    <label>
+                        <input type="checkbox" id="hide-sold-out">
+                        Hide Sold Out Events
+                    </label>
+                </div>
+                
+                <button class="clear-filters">Clear All</button>
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid" id="events-container">
+            <!-- Events will be dynamically inserted here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="prev-page">Previous Page</button>
+            <button class="next-page">Next Page</button>
+        </div>
+    </main>
+</body>
+<script src="./scripts/events.js"></script>
+<script src="./scripts/nav.js"></script>
+</html>

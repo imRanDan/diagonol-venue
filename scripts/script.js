@@ -8,6 +8,10 @@ const testimonials = [
         quote: "I am so grateful that this place exists!",
         author: "Annie Mac"
     },
+    {
+        quote: "F*cking love this place",
+        author: "deadmau5"
+    },
     // Add more testimonials
 ];
 
@@ -33,37 +37,54 @@ let currentTestimonial = 0;
 const testimonialSlider = document.querySelector('.testimonial-slider');
 
 function updateTestimonials() {
-    testimonialSlider.innerHTML = `
-        <div class="testimonial">
-            <p class="quote">${testimonials[currentTestimonial].quote}</p>
-            <p class="author">- ${testimonials[currentTestimonial].author}</p>
-        </div>
-    `;
-    
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    if (testimonialSlider) { // Only run if testimonial slider exists on page
+        testimonialSlider.innerHTML = `
+            <div class="testimonial">
+                <p class="quote">${testimonials[currentTestimonial].quote}</p>
+                <p class="author">- ${testimonials[currentTestimonial].author}</p>
+            </div>
+        `;
+        
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    }
 }
 
-// Initialize testimonials and set interval
-updateTestimonials();
-setInterval(updateTestimonials, 5000);
+// Initialize testimonials and set interval if on homepage
+if (document.querySelector('.testimonial-slider')) {
+    updateTestimonials();
+    setInterval(updateTestimonials, 5000);
+}
 
-// Smooth Scroll for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// Navigation Links
+const navItems = [
+    { text: 'HOME', url: 'index.html' },
+    { text: 'SHOP', url: 'shop.html' },
+    { text: "WHAT'S ON", url: 'whats-on.html' },
+    { text: 'NEWS', url: 'news.html' }
+];
+
+// Add active class to current page nav link
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
     });
-});
+}
+
+// Call setActiveNavLink when DOM is loaded
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 // Newsletter Form Submission
 const subscribeForm = document.querySelector('.subscribe-form');
-subscribeForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = e.target.querySelector('input[type="email"]').value;
-    // Add your newsletter subscription logic here
-    console.log('Subscription email:', email);
-    // Reset form
-    e.target.reset();
-}); 
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = e.target.querySelector('input[type="email"]').value;
+        // Add your newsletter subscription logic here
+        console.log('Subscription email:', email);
+        // Reset form
+        e.target.reset();
+    });
+} 
