@@ -3,9 +3,7 @@
 ## Overview
 DIAGONAL is a sophisticated web application for a modern music and events venue, featuring a sleek design inspired by industrial aesthetics. The project demonstrates advanced front-end development techniques and responsive design principles.
 
-[Live Demo](your-demo-link) | [GitHub Repository](your-repo-link)
-
-![DIAGONAL Preview](path-to-screenshot.png)
+[Live Demo]([your-demo-link](https://diagonalclub.netlify.app/))
 
 ## Features
 
