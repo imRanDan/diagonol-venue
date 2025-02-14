@@ -121,10 +121,52 @@ section h2 {
 }
 
 /* Contact Section */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+.contact-section {
+    padding: 80px 40px;
+    text-align: center;
+    background: #111;  /* Lighter background */
+    margin-top: 4rem;
+}
+
+.contact-info {
+    margin-top: 30px;
+    line-height: 1.8;
+    color: #fff;  /* White text */
+}
+
+.contact-section h2 {
+    color: #fff;  /* White heading */
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    color: #999;  /* Light grey text for better readability */
+}
+
+.contact-info a {
+    color: #fff;  /* White links */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+/* Add some hover effects to email and phone */
+.contact-info .contact-link {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.contact-info .contact-link:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Form Elements */
