@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue Name</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="logo">DIAGONOL</div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#whats-on">What's On</a>
+        <a href="#news">News</a>
+        <a href="#info">Info</a>
+        <a href="#hire">Hire</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <video autoplay muted loop id="hero-video">
+        <source src="your-video.mp4" type="video/mp4" />
+      </video>
+    </header>
+
+    <!-- Latest News Section -->
+    <section class="news-section">
+      <h2>Latest News</h2>
+      <div class="news-grid">
+        <div class="news-card">
+          <img src="news1.jpg" alt="News 1" />
+          <div class="news-content">
+            <h3>Event Title</h3>
+            <p class="date">30 January 2025</p>
+            <p>Event description goes here...</p>
+          </div>
+        </div>
+        <!-- Add more news cards -->
+      </div>
+      <button class="view-all">View All News</button>
+    </section>
+
+    <!-- Hire Section -->
+    <section class="hire-section">
+      <h2>HIRE</h2>
+      <p class="hire-description">Venue description and specifications...</p>
+      <button class="hire-btn">HIRE VENUE</button>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="testimonial-slider">
+        <!-- Testimonials will be inserted here via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Venue Name</h3>
+          <p>Address Line 1</p>
+          <p>City, Country</p>
+          <p>Postal Code</p>
+          <button class="directions-btn">Get Directions</button>
+        </div>
+        <div class="footer-section">
+          <h3>Subscribe</h3>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Email *" required />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+        <div class="footer-section partners">
+          <h3>Our Partners</h3>
+          <div class="partner-logos">
+            <!-- Partner logos will go here -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
