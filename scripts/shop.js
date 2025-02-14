@@ -4,14 +4,14 @@ const products = [
     id: 1,
     name: "Venue Roller T-Shirt",
     price: 35.0,
-    image: "product1.jpg",
+    image: "/assets/images/product1.jpg",
     category: "T-Shirts",
   },
   {
     id: 2,
     name: "Venue Bomber Jacket",
     price: 355.0,
-    image: "product1.jpg",
+    image: "/assets/images/product2.jpg",
     category: "Jackets",
   },
   // Add more products here
@@ -95,3 +95,74 @@ function filterProducts(category) {
     }
   });
 }
+
+// Shop items array with categories
+const shopItems = [
+    {
+        name: "Diagonal Roller T-Shirt",
+        price: 35.00,
+        category: "T-Shirts",
+        image: "/assets/images/product1.jpg"
+    },
+    {
+        name: "Diagonal Jacket",
+        price: 89.99,
+        category: "Jackets",
+        image: "/assets/images/product2.jpg"  // Update with your actual image path
+    },
+    {
+        name: "Diagonal Hoodie",
+        price: 89.99,
+        category: "Jackets",
+        image: "/assets/images/product3.jpg"  // Update with your actual image path
+    },
+    // Add more items as needed
+];
+
+function displayShopItems(category = 'All') {
+    const productGrid = document.querySelector('.product-grid');
+    productGrid.innerHTML = ''; // Clear existing items
+    
+    const filteredItems = category === 'All' 
+        ? shopItems 
+        : shopItems.filter(item => item.category === category);
+    
+    filteredItems.forEach(item => {
+        const productCard = `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${item.image}" alt="${item.name}" />
+                    <div class="quick-add">Quick Add</div>
+                </div>
+                <div class="product-info">
+                    <h3>${item.name}</h3>
+                    <p class="price">$${item.price.toFixed(2)} CAD</p>
+                </div>
+            </div>
+        `;
+        productGrid.innerHTML += productCard;
+    });
+}
+
+// Set up filter buttons
+function setupFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // Filter products
+            const category = button.textContent;
+            displayShopItems(category);
+        });
+    });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    displayShopItems(); // Show all items initially
+    setupFilters();
+});
